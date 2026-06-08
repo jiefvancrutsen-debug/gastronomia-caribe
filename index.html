@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Disfruta de la mejor gastronomía Caribe en Cartagena. Platos típicos de la región caribe colombiana preparados con recetas ancestrales e ingredientes frescos.">
+    <meta name="keywords" content="gastronomia caribe, platos tipicos region caribe colombiana, restaurante cartagena, comida costeña, pescado frito, sancocho, Dario Jose Paez Gonzales">
+    <meta name="author" content="Dario Jose Paez Gonzales">
+    
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tudominio.com/">
+    
+    <title>Gastronomía Caribe | Auténticos Platos Típicos en Cartagena</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variables de color y tipografía */
+        :root {
+            --primary: #d35400; /* Naranja apetitoso */
+            --primary-hover: #e67e22;
+            --secondary: #27ae60; /* Verde tropical */
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #fdfbf7;
+            --white: #ffffff;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        /* Reset Básico */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-family: var(--font-body); color: var(--text-dark); }
+        body { background-color: var(--bg-light); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* Estructura general */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        
+        /* Tipografías */
+        h1, h2, h3 { font-family: var(--font-heading); color: var(--text-dark); }
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 1rem; color: var(--primary); }
+        .section-subtitle { text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* Botones */
+        .btn { display: inline-block; background-color: var(--primary); color: var(--white); padding: 15px 30px; border-radius: 5px; font-weight: 600; font-family: var(--font-heading); border: none; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s; text-align: center; font-size: 1.1rem; }
+        .btn:hover { background-color: var(--primary-hover); transform: translateY(-2px); color: var(--white); }
+        .btn-full { width: 100%; }
+
+        /* Cabecera / Navegación */
+        header { background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; font-family: var(--font-heading); color: var(--primary); }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Sección Hero */
+        .hero { background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat; color: var(--white); text-align: center; padding: 140px 20px; }
+        .hero h1 { color: var(--white); font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
+        .hero p { font-size: 1.25rem; max-width: 750px; margin: 0 auto 2.5rem auto; font-weight: 400; }
+
+        /* Beneficios & Servicios (Sistema de Cuadrícula) */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--white); padding: 40px 30px; border-radius: 8px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease; border-bottom: 4px solid var(--secondary); }
+        .card:hover { transform: translateY(-5px); border-bottom-color: var(--primary); }
+        .card-icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
+        .card h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+        .card p { color: var(--text-light); }
+
+        /* Prueba Social / Compromiso */
+        .social-proof { background-color: var(--primary); color: var(--white); padding: 60px 0; text-align: center; }
+        .proof-box { max-width: 800px; margin: 0 auto; }
+        .proof-box p { font-size: 1.3rem; font-style: italic; margin-bottom: 1.5rem; line-height: 1.8; }
+        .proof-box span { font-weight: 700; font-family: var(--font-heading); }
+
+        /* Formulario y Contacto */
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: var(--white); padding: 50px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); }
+        .contact-info h3 { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary); }
+        .info-item { margin-bottom: 1.5rem; }
+        .info-item strong { display: block; color: var(--text-dark); font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .info-item span { color: var(--text-light); }
+        
+        .form-group { margin-bottom: 1.5rem; }
+        .form-control { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 5px; font-family: var(--font-body); font-size: 1rem; transition: border-color 0.3s; }
+        .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px rgba(211, 84, 0, 0.1); }
+        textarea.form-control { resize: vertical; min-height: 120px; }
+        
+        .checkbox-group { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: var(--text-light); }
+        .checkbox-group a { color: var(--primary); text-decoration: underline; font-weight: 600; }
+        
+        .form-message { display: none; padding: 15px; border-radius: 5px; margin-top: 20px; text-align: center; font-weight: 600; }
+        .msg-success { background-color: #d4edda; color: #155724; display: block; }
+
+        /* Footer */
+        footer { background-color: #2c3e50; color: #bdc3c7; padding: 50px 0 20px 0; text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .footer-links a { transition: color 0.3s; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-copy { font-size: 0.9rem; border-top: 1px solid #34495e; padding-top: 20px; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Navegación oculta en móvil para priorizar el CTA */
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .contact-wrapper { grid-template-columns: 1fr; padding: 30px 20px; gap: 40px; }
+            section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Gastronomía Caribe</div>
+            <nav class="nav-links">
+                <a href="#beneficios">Por qué elegirnos</a>
+                <a href="#platos">Nuestros Platos</a>
+                <a href="#reserva" class="btn" style="padding: 10px 20px; font-size: 1rem; color: white;">Reserva tu mesa</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Siente el Auténtico Sabor de la Gastronomía Caribe</h1>
+                <p>Descubre los platos típicos más emblemáticos de la región caribe colombiana. Sabores ancestrales, ingredientes frescos y la mejor atención en el corazón de Cartagena.</p>
+                <a href="#reserva" class="btn btn-full" style="max-width: 400px; font-size: 1.2rem;">Reserva tu experiencia gastronómica caribeña</a>
+            </div>
+        </section>
+
+        <section id="beneficios" class="container">
+            <h2 class="section-title">El Verdadero Sabor Costeño</h2>
+            <p class="section-subtitle">Nos enorgullece preservar la tradición culinaria del Caribe, ofreciendo una experiencia honesta y deliciosa.</p>
+            <div class="grid-3">
+                <div class="card">
+                    <span class="card-icon">🥥</span>
+                    <h3>Ingredientes Frescos</h3>
+                    <p>Seleccionamos diariamente la pesca local y los frutos de nuestra tierra para garantizar el sabor auténtico en cada preparación.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🥘</span>
+                    <h3>Recetas Ancestrales</h3>
+                    <p>Mantenemos vivas las preparaciones tradicionales de nuestras abuelas, respetando los tiempos y sazones del Caribe.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🌴</span>
+                    <h3>Ambiente Cartagenero</h3>
+                    <p>No solo te ofrecemos comida, te brindamos la calidez, la alegría y la atención que caracterizan a nuestra hermosa Cartagena.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="platos" style="background-color: var(--white);">
+            <div class="container">
+                <h2 class="section-title">Nuestras Especialidades</h2>
+                <p class="section-subtitle">Un recorrido por los platos típicos de la región caribe colombiana que no puedes dejar de probar.</p>
+                <div class="grid-3">
+                    <div class="card" style="border-bottom-color: var(--primary);">
+                        <h3>Pescado Frito con Patacón</h3>
+                        <p>Mojarra o pargo rojo frito a la perfección, acompañado de patacones crujientes, arroz de coco y ensalada fresca.</p>
+                    </div>
+                    <div class="card" style="border-bottom-color: var(--primary);">
+                        <h3>Sancocho de Pescado</h3>
+                        <p>Un caldo sustancioso con los mejores cortes de pescado fresco, yuca, ñame, plátano y el toque inconfundible del cilantro.</p>
+                    </div>
+                    <div class="card" style="border-bottom-color: var(--primary);">
+                        <h3>Mote de Queso</h3>
+                        <p>Una joya de nuestra región. Sopa cremosa a base de ñame, queso costeño, suero atollabuey y un sofrito tradicional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-proof">
+            <div class="container">
+                <div class="proof-box">
+                    <h2 style="margin-bottom: 20px; font-size: 2rem; color: white;">Nuestro Compromiso</h2>
+                    <p>"Servimos comida real, honesta y tradicional. Cada plato que sale de nuestra cocina representa el esfuerzo de los pescadores, campesinos y cocineros de la región caribe colombiana."</p>
+                    <span>- Dario Jose Paez Gonzales, Chef y Fundador</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="reserva" class="container">
+            <div class="contact-wrapper">
+                
+                <div class="contact-info">
+                    <h3>Visítanos en Cartagena</h3>
+                    <p style="margin-bottom: 2rem; color: var(--text-light);">Estamos listos para atenderte. Contáctanos para reservas, pedidos especiales o eventos corporativos.</p>
+                    
+                    <div class="info-item">
+                        <strong>Responsable:</strong>
+                        <span>Dario Jose Paez Gonzales</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Dirección:</strong>
+                        <span>Transversal 40 #246, Cartagena, Colombia</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Horario de atención:</strong>
+                        <span>Todos los días de la semana de 8:00 am a 5:00 pm</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Teléfono / WhatsApp:</strong>
+                        <span>3017169245</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Correo electrónico:</strong>
+                        <span>JiefVancrutsen@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <form id="reservaForm">
+                        <div class="form-group">
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre completo *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="telefono" class="form-control" placeholder="Teléfono celular *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" class="form-control" placeholder="Correo electrónico *" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="mensaje" class="form-control" placeholder="Indícanos la fecha de tu reserva y si tienes alguna solicitud especial (alergias, celebraciones)..."></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacidad" required style="margin-top: 4px; cursor: pointer;">
+                            <label for="privacidad">He leído y acepto la <a href="politica-de-privacidad.html" target="_blank">Política de Privacidad</a> y autorizo el tratamiento de mis datos para gestionar mi reserva.</label>
+                        </div>
+                        <button type="submit" class="btn btn-full" id="submitBtn">Reserva tu experiencia gastronómica caribeña</button>
+                        
+                        <div id="formStatus" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="politica-de-privacidad.html">Política de Privacidad</a>
+                <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+            </div>
+            <div class="footer-copy">
+                &copy; <span id="year"></span> Gastronomía Caribe por Dario Jose Paez Gonzales. <br>
+                Cartagena, Colombia. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Actualizar el año en el footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Gestión del formulario simulando el envío para Google Ads (sin abandonar la página)
+        document.getElementById('reservaForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            const btn = document.getElementById('submitBtn');
+            const statusDiv = document.getElementById('formStatus');
+            
+            // Estado visual de carga
+            btn.textContent = 'Procesando tu solicitud...';
+            btn.disabled = true;
+            btn.style.opacity = '0.8';
+
+            // Simular un envío exitoso a un servidor (Reemplazar con Fetch real si se requiere backend)
+            setTimeout(() => {
+                statusDiv.textContent = '¡Gracias! Hemos recibido tu solicitud de reserva. Nos pondremos en contacto muy pronto para confirmar tu mesa.';
+                statusDiv.className = 'form-message msg-success';
+                this.reset();
+                btn.textContent = 'Reserva tu experiencia gastronómica caribeña';
+                btn.disabled = false;
+                btn.style.opacity = '1';
+            }, 1200);
+        });
+    </script>
+</body>
+</html>
